@@ -17,6 +17,8 @@ Valores: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15.
 #define CMD 0 //REGISTERSELECT RS (controlador do LCD) P1.3 = 0
 #define DADO 8 //REGISTERSELECT RS (controlador do LCD) P1.3 = 1 ?
 
+RS = 1;
+
 #include <reg51.h>
 //Interrupt Service Routine = Tratador de Interrupção
 void writeToDisplay(unsigned char *, unsigned char);
@@ -48,6 +50,7 @@ void main(void){
 		while(ISR0_flag){ //enquanto ISR0_flag não for 1 -> Se torna 1 na interrupção
 			ISR0_flag = 0;
 			valor_tmp_tabela = tabela[ISR1_counter];
+			ISR1_counter++;
 			ISR1_counter = ISR1_counter == 15 ? 0 : ISR1_counter; //Operador ternário: IF-ELSE compacto
 			/*
 			ISR1_counter recebe 0 se ISR1_counter == 15, senão recebe ele mesmo.
@@ -117,7 +120,6 @@ void hardwareInit(void){
 
 void c51_ISR1(void) interrupt 0{ //Interrupção Externa 0: P3.2
 	ISR0_flag = 1;
-	ISR1_counter = ISR1_counter == 0 ? 0 : ISR1_counter++;
 }
 
 void delay(unsigned int iterator){
