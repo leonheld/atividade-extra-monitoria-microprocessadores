@@ -15,7 +15,7 @@ Valores: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15.
 //3. O dado lido deve ser convertido em ASCII
 //4. O valor lido deve ser escrito no display de LCD.
 #define CMD 0 //REGISTERSELECT RS (controlador do LCD) P1.3 = 0
-#define SELECIONAENVIODEDADOS 8 //REGISTERSELECT RS (controlador do LCD) P1.3 = 1 ?
+#define DADO 8 //REGISTERSELECT RS (controlador do LCD) P1.3 = 1 ?
 
 RS = 1;
 
