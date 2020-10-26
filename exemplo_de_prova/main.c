@@ -49,7 +49,7 @@ void main(void){
 			ISR0_flag = 0;
 			valor_tmp_tabela = tabela[ISR1_counter];
 			ISR1_counter++;
-			ISR1_counter = ISR1_counter == 15 ? 0 : ISR1_counter; //Operador ternário: IF-ELSE compacto
+			ISR1_counter = ISR1_counter == 16 ? 0 : ISR1_counter; //Operador ternário: IF-ELSE compacto
 			/*
 			ISR1_counter recebe 0 se ISR1_counter == 15, senão recebe ele mesmo.
 			*/
