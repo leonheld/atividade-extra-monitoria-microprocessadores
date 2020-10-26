@@ -17,8 +17,6 @@ Valores: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15.
 #define CMD 0 //REGISTERSELECT RS (controlador do LCD) P1.3 = 0
 #define DADO 8 //REGISTERSELECT RS (controlador do LCD) P1.3 = 1 ?
 
-RS = 1;
-
 #include <reg51.h>
 //Interrupt Service Routine = Tratador de Interrupção
 void writeToDisplay(unsigned char *, unsigned char);
